@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/constraint"
     tools:context=".MainActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -18,10 +19,19 @@
         app:rippleColor="@color/cardview_light_background"
         />
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_layout"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
     <ListView
         android:id="@+id/list_todo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

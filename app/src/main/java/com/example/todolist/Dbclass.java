@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+
 public class Dbclass extends SQLiteOpenHelper
 {
     private static final int DB_VERSION = 1;
@@ -30,18 +31,18 @@ public class Dbclass extends SQLiteOpenHelper
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1)
     {
-
     }
 
-    public void insert_todo(String content)
+    public void insert_todo(String content,DbAdapter dbAdapter)
     {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues cvalues = new ContentValues();
 
-        cvalues.put(Key_name,"Hello da");
+        cvalues.put(Key_name,content);
 
         long newrowid = db.insert(Table_Users,null,cvalues);
+
         db.close();
     }
 
@@ -59,7 +60,6 @@ public class Dbclass extends SQLiteOpenHelper
         Cursor res = db.rawQuery("Select * from "+Table_Users,null);
 
         return res;
-
     }
 
 }

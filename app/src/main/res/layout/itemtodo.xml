@@ -10,6 +10,7 @@
         android:layout_height="32dp"
         android:id="@+id/task_check"
         android:layout_alignParentLeft="true"
+        android:onClick="deleteTask"
         />
 
     <TextView

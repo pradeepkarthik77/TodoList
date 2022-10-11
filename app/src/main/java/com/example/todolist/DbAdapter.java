@@ -1,5 +1,7 @@
 package com.example.todolist;
 
+import static java.security.AccessController.getContext;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,7 +15,6 @@ import org.w3c.dom.Text;
 
 public class DbAdapter extends CursorAdapter
 {
-
     public DbAdapter(Context context,Cursor cursor)
     {
         super(context,cursor,0);
@@ -28,6 +29,7 @@ public class DbAdapter extends CursorAdapter
     @Override
     public void bindView(View view, Context context, Cursor cursor)
     {
+
         TextView content = (TextView) view.findViewById(R.id.task_title);
 
         String db_content;
